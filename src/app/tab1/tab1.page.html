@@ -1,22 +1,14 @@
 <ion-content [fullscreen]="true">
- 
-    <!-- <ion-segment 
-    value="pizza"
-    scrollable
-    mode = "md">
 
-        <ion-segment-button *ngFor="let pelicula of peliculasRecientes" [value]="pelicula.title">
-            <ion-label class="ion-text-capitalize">{{pelicula.title}}</ion-label>
-        </ion-segment-button>
-    </ion-segment> -->
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col>
+                <h3>Películas Nuevas</h3>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-    <swiper-container>
-        <swiper-slide *ngFor="let pelicula of peliculasRecientes">
-            <ion-card>
-                <!-- <ion-img [src]="pelicula.backdrop_path | imagen"></ion-img> -->
-            </ion-card>
-        </swiper-slide>
-    </swiper-container>
+    <app-slideshow-backdrop [peliculas] = "peliculasRecientes" ></app-slideshow-backdrop>
 
 
 </ion-content>

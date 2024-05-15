@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { Pelicula } from '../interfaces/interfaces';
-import { ImagenPipe } from '../pipes/imagen.pipe';
 
 @Component({
   selector: 'app-tab1',
@@ -18,7 +17,7 @@ export class Tab1Page implements OnInit {
     this.movieService.getFeature().subscribe(
       (resp) => {
         this.peliculasRecientes = resp.results;
-        console.log(resp.results[0].backdrop_path);
+        // console.log(resp.results[0].backdrop_path);
       }
     );
   }

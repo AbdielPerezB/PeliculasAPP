@@ -1,0 +1,7 @@
+<swiper-container>
+  <swiper-slide *ngFor="let pelicula of peliculas">
+      <ion-card>
+          <ion-img [src]="pelicula.backdrop_path | imagen"></ion-img>
+      </ion-card>
+  </swiper-slide>
+</swiper-container>
