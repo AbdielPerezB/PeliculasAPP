@@ -28,8 +28,8 @@
         </ion-row>
     </ion-grid>
 
-    
-    <app-slideshow-poster [peliculas] = "populares"></app-slideshow-poster>
+    <app-slideshow-pares [peliculas] = "populares"
+                          (cargarMas)="cargarMas()"></app-slideshow-pares>
 
 
 </ion-content>

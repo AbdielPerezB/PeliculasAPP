@@ -12,6 +12,8 @@ const apiKey = environment.apiKey;
 })
 export class MoviesService {
 
+  private popularesPage = 0;
+
   constructor(private http:HttpClient) { }
 
   private ejecutarQuery<T>(query: string){
@@ -39,7 +41,8 @@ export class MoviesService {
     return this.ejecutarQuery<RespuestaMDB>(`/discover/movie?primary_release_date.gte=${inicio}&primary_release_date.lte=${fin}`);
   }
   getPopulares(){
-    const query = '/discover/movie?sort_by=popularity.desc';
+    this.popularesPage++;
+    const query = `/discover/movie?sort_by=popularity.desc&page=${this.popularesPage}`;
     return this.ejecutarQuery<RespuestaMDB>(query);
 
   }

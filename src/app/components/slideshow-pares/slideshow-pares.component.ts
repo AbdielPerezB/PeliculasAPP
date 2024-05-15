@@ -1,30 +1,31 @@
-import { Component, Input} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Pelicula } from 'src/app/interfaces/interfaces';
 import { DetalleComponent } from '../detalle/detalle.component';
 
 @Component({
-  selector: 'app-slideshow-backdrop',
-  templateUrl: './slideshow-backdrop.component.html',
-  styleUrls: ['./slideshow-backdrop.component.scss'],
+  selector: 'app-slideshow-pares',
+  templateUrl: './slideshow-pares.component.html',
+  styleUrls: ['./slideshow-pares.component.scss'],
 })
-export class SlideshowBackdropComponent {
-
+export class SlideshowParesComponent {
   @Input() peliculas: Pelicula[] = [];
+  @Output() cargarMas = new EventEmitter();
 
   constructor(private modalCtrl: ModalController) { }
 
+  onClick(){
+    // console.log('cargar más');
+    this.cargarMas.emit();
+  }
+
   async verDetalle(id: number){
-    //Todo esto regresara una promesa
     const modal = await this.modalCtrl.create({
-      //Componente que voy a desplegar
       component: DetalleComponent,
-      //Detalles que le voy a enviar
       componentProps: {
-        id,
+        id
       }
     });
-
     modal.present();
   }
 
