@@ -12,14 +12,21 @@ export class Tab1Page implements OnInit {
   constructor(private movieService: MoviesService) {}
 
   peliculasRecientes: Pelicula[] = [];
+  populares: Pelicula[] = [];
 
   ngOnInit(): void {
     this.movieService.getFeature().subscribe(
       (resp) => {
         this.peliculasRecientes = resp.results;
-        console.log(resp.results);
+        // console.log(resp.results);
       }
     );
+
+    this.movieService.getPopulares().subscribe(
+      resp => {
+        console.log('Populares: ', resp);
+        this.populares = resp.results
+      });
   }
 
 
