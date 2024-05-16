@@ -57,4 +57,9 @@ export class MoviesService {
     const query = `/movie/${id}/credits?a=1`;
     return this.ejecutarQuery<RespuestaCredits>(query);
   }
+
+  getSearchMovie(queryBusqueda: string){
+    const query = `/search/movie?query=${queryBusqueda}&include_adult=true`;
+    return this.ejecutarQuery<RespuestaMDB>(query);
+  }
 }
