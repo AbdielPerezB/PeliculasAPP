@@ -70,7 +70,7 @@ interface Productioncompany {
   origin_country: string;
 }
 
-interface Genre {
+export interface Genre {
   id: number;
   name: string;
 }
@@ -116,4 +116,9 @@ export interface Cast {
   character: string;
   credit_id: string;
   order: number;
+}
+
+//Para obtener generos
+export interface arrGenres {
+  genres: Genre[];
 }

@@ -21,9 +21,6 @@ export class Tab2Page {
 
   leerInput(event:any){
     const idea = event.detail.value;
-    if(!idea){
-      return;
-    }
     this.buscar(idea);
 
   }
