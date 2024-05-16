@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { ImagenPipe } from '../pipes/imagen.pipe';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ImagenPipe } from '../pipes/imagen.pipe';
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
-    ImagenPipe
+    ImagenPipe,
+    ComponentsModule
   ],
   declarations: [Tab2Page],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

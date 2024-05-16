@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { MoviesService } from '../services/movies.service';
 import { Pelicula } from '../interfaces/interfaces';
+import { ModalController } from '@ionic/angular';
+import { DetalleComponent } from '../components/detalle/detalle.component';
 
 @Component({
   selector: 'app-tab2',
@@ -14,7 +16,8 @@ export class Tab2Page {
   peliculas:Pelicula[] = [];
   buscando = false;
 
-  constructor(private movieService: MoviesService) {}
+  constructor(private movieService: MoviesService,
+              private modalCtrl:ModalController) {}
 
   leerInput(event:any){
     const idea = event.detail.value;
@@ -39,6 +42,15 @@ export class Tab2Page {
       });
   }
 
+  async verDetalle(id:number){
+    const modal = await this.modalCtrl.create({
+      component:DetalleComponent,
+      componentProps:{
+        id
+      }
+    });
+    modal.present();
+  }
 
 
 }
