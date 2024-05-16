@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PeliculaDetalle } from '../interfaces/interfaces';
+import { Pelicula, PeliculaDetalle } from '../interfaces/interfaces';
 import { DataLocalService } from '../services/data-local.service';
 
 @Component({
@@ -8,12 +8,13 @@ import { DataLocalService } from '../services/data-local.service';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
-  peliculas:PeliculaDetalle[] = [];
+  peliculasDetalles:PeliculaDetalle[] = [];
+
 
   constructor(private dataLocal:DataLocalService) {}
 
   async ngOnInit(){
-    this.peliculas = await this.dataLocal.cargarFavoritos();
+    this.peliculasDetalles = await this.dataLocal.cargarFavoritos();
   }
 
 }

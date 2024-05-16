@@ -7,6 +7,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { ComponentsModule } from '../components/components.module';
+import { PeliculadetalleToPeliculaPipe } from '../pipes/peliculadetalle-to-pelicula.pipe';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { ComponentsModule } from '../components/components.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab3PageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    PeliculadetalleToPeliculaPipe
   ],
   declarations: [Tab3Page]
 })
