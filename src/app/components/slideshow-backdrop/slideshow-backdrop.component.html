@@ -1,6 +1,7 @@
 <swiper-container [slidesPerView]="1.3">
   <swiper-slide *ngFor="let pelicula of peliculas">
-      <ion-card (click)="verDetalle(pelicula.id)">
+      <ion-card (click)="verDetalle(pelicula.id)"
+                *ngIf="pelicula.backdrop_path">
           <ion-img [src]="pelicula.backdrop_path | imagen"></ion-img>
       </ion-card>
   </swiper-slide>
